@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISLI | 85 años</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="assets/logo.svg" alt="Logo" width="38" height="38">
+                Instituto Superior La Inmaculada
+            </div>
+            <nav id="navbar">
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#programas">Programas</a></li>
+                    <li><a href="#contacto" id="contact-link" class="btn-outline">Contacto</a></li>
+                <li><a href="#redes" class="btn-outline">Nuestras Redes</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h1>Educación de Excelencia para los Líderes del Mañana</h1>
+            <p>Descubre un modelo académico innovador diseñado para potenciar tus habilidades y asegurar tu futuro profesional.</p>
+            <a href="#programas" class="btn-primary">Explorar Programas</a>
+        </div>
+    </section>
+
+    <section id="nosotros" class="about">
+        <div class="container">
+            <h2>Por qué elegirnos</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Innovación</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, consequatur. Est ab deleniti eaque blanditiis repudiandae praesentium inventore quo assumenda et architecto fuga nobis tempora accusantium, amet aspernatur itaque maxime!</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Excelencia</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, consequatur. Est ab deleniti eaque blanditiis repudiandae praesentium inventore quo assumenda et architecto fuga nobis tempora accusantium, amet aspernatur itaque maxime!</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Comunidad</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, consequatur. Est ab deleniti eaque blanditiis repudiandae praesentium inventore quo assumenda et architecto fuga nobis tempora accusantium, amet aspernatur itaque maxime!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programas" class="programs">
+        <div class="container">
+            <h2>Propuesta Académica</h2>
+            <p class="section-intro">Descubre nuestras carreras diseñadas para formar profesionales competentes y comprometidos con la transformación social.</p>
+            
+            <div class="programs-grid">
+                <!-- Carrera 1: Profesorado en Educación Primaria -->
+                <div class="program-card">
+                    <div class="program-header" onclick="toggleProgram(this)">
+                        <div class="program-icon">📚</div>
+                        <div class="program-info">
+                            <h3>Profesorado en Educación Primaria</h3>
+                            <div class="program-meta">
+                                <span class="duration">Duración: 4 años</span>
+                                <span class="scope">Alcance: Nacional</span>
+                            </div>
+                        </div>
+                        <div class="toggle-arrow">▼</div>
+                    </div>
+                    <div class="program-summary">
+                        <p>Forma docentes especializados en la enseñanza de niños de 6 a 12 años, con enfoque en pedagogías activas y uso de tecnologías educativas.</p>
+                    </div>
+                    <div class="program-details">
+                        <h4>Detalles de la Carrera</h4>
+                        <div class="details-content">
+                            <div class="detail-item">
+                                <h5>Perfil del Graduado</h5>
+                                <p>El egresado será capaz de diseñar, implementar y evaluar procesos de enseñanza-aprendizaje significativos, promoviendo el desarrollo integral de los estudiantes en contextos diversos.</p>
+                            </div>
+                            <div class="detail-item">
+                                <h5>Plan de Estudios</h5>
+                                <ul>
+                                    <li>Primer año: Fundamentos de la Educación, Psicología del Desarrollo, Didáctica General</li>
+                                    <li>Segundo año: Currículum y Evaluación, Prácticas Docentes I, Literatura Infantil</li>
+                                    <li>Tercer año: Didáctica de las Ciencias, Prácticas Docentes II, Educación Inclusiva</li>
+                                    <li>Cuarto año: Seminario de Integración, Prácticas Docentes III, Taller de Tesis</li>
+                                </ul>
+                            </div>
+                            <div class="detail-item">
+                                <h5>Campo Laboral</h5>
+                                <p>Escuelas primarias públicas y privadas, instituciones de educación especial, programas de educación no formal, diseño de materiales educativos, asesoría pedagógica.</p>
+                            </div>
+                            <div class="detail-item">
+                                <h5>Requisitos de Ingreso</h5>
+                                <p>Secundaria completa, examen de ingreso (opcional), entrevista personal, disposición para el trabajo con niños.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carrera 2: Profesorado en Educación Especial -->
+                <div class="program-card">
+                    <div class="program-header" onclick="toggleProgram(this)">
+                        <div class="program-icon">🌟</div>
+                        <div class="program-info">
+                            <h3>Profesorado en Educación Especial</h3>
+                            <div class="program-meta">
+                                <span class="duration">Duración: 4 años</span>
+                                <span class="scope">Alcance: Nacional</span>
+                            </div>
+                        </div>
+                        <div class="toggle-arrow">▼</div>
+                    </div>
+                    <div class="program-summary">
+                        <p>Prepara profesionales para atender la diversidad en el aula, con énfasis en inclusión educativa y estrategias de enseñanza diferenciada.</p>
+                    </div>
+                    <div class="program-details">
+                        <h4>Detalles de la Carrera</h4>
+                        <div class="details-content">
+                            <div class="detail-item">
+                                <h5>Perfil del Graduado</h5>
+                                <p>El egresado estará capacitado para identificar barreras para el aprendizaje y la participación, diseñar adaptaciones curricares y trabajar colaborativamente con equipos interdisciplinarios.</p>
+                            </div>
+                            <div class="detail-item">
+                                <h5>Plan de Estudios</h5>
+                                <ul>
+                                    <li>Primer año: Fundamentos de Educación Especial, Psicología de la Discapacidad, Anatomía y Fisiología</li>
+                                    <li>Segundo año: Evaluación Psicopedagógica, Prácticas en Educación Especial I, Comunicación Aumentativa</li>
+                                    <li>Tercer año: Didáctica de la Educación Especial, Prácticas en Educación Especial II, Tecnología Asistiva</li>
+                                    <li>Cuarto año: Seminario de Integración, Prácticas en Educación Especial III, Trabajo Final</li>
+                                </ul>
+                            </div>
+                            <div class="detail-item">
+                                <h5>Campo Laboral</h5>
+                                <p>Escuelas de educación especial, aulas de apoyo en escuelas regulares, centros de rehabilitación, asesoramiento a instituciones educativas, diseño de programas de inclusión.</p>
+                            </div>
+                            <div class="detail-item">
+                                <h5>Requisitos de Ingreso</h5>
+                                <p>Secundaria completa, sensibilidad hacia la diversidad, compromiso con la inclusión, entrevista personal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carrera 3: Tecnicatura Superior en Gastronomía -->
+                <div class="program-card">
+                    <div class="program-header" onclick="toggleProgram(this)">
+                        <div class="program-icon">🍳</div>
+                        <div class="program-info">
+                            <h3>Tecnicatura Superior en Gastronomía</h3>
+                            <div class="program-meta">
+                                <span class="duration">Duración: 3 años</span>
+                                <span class="scope">Alcance: Nacional</span>
+                            </div>
+                        </div>
+                        <div class="toggle-arrow">▼</div>
+                    </div>
+                    <div class="program-summary">
+                        <p>Forma chefs y gestores gastronómicos con visión empresarial, dominio de técnicas culinarias y conciencia sobre sostenibilidad alimentaria.</p>
+                    </div>
+                    <div class="program-details">
+                        <h4>Detalles de la Carrera</h4>
+                        <div class="details-content">
+                            <div class="detail-item">
+                                <h5>Perfil del Graduado</h5>
+                                <p>El técnico gastronómico podrá diseñar menús, gestionar servicios de alimentación, aplicar técnicas culinarias modernas y tradicionales, y emprender proyectos gastronómicos innovadores.</p>
+                            </div>
+                            <div class="detail-item">
+                                <h5>Plan de Estudios</h5>
+                                <ul>
+                                    <li>Primer año: Introducción a la Gastronomía, Técnicas Culinarias Básicas, Nutrición y Bromatología</li>
+                                    <li>Segundo año: Cocina Internacional, Pastelería y Panadería, Gestión de Restaurantes</li>
+                                    <li>Tercer año: Gastronomía Molecular, Emprendimiento Gastronómico, Prácticas Profesionales</li>
+                                </ul>
+                            </div>
+                            <div class="detail-item">
+                                <h5>Campo Laboral</h5>
+                                <p>Restaurantes, hoteles, catering, industria alimentaria, emprendimientos propios, consultoría gastronómica, medios de comunicación especializados.</p>
+                            </div>
+                            <div class="detail-item">
+                                <h5>Requisitos de Ingreso</h5>
+                                <p>Secundaria completa, certificado médico, interés por la gastronomía, disponibilidad horaria para prácticas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="redes" class="social-section">
+        <div class="container">
+            <h2>Síguenos en nuestras redes</h2>
+            <p class="section-intro">Mantente conectado con nosotros y forma parte de nuestra comunidad educativa.</p>
+            
+            <div class="social-grid">
+                <a href="https://facebook.com/inmaculada.apostoles" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="Facebook">
+                    <div class="social-icon facebook">
+                        <svg viewBox="0 0 24 24" width="48" height="48">
+                            <path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </div>
+                    <span>Facebook</span>
+                </a>
+
+                <a href="https://instagram.com/colegio.lainmaculada" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="Instagram">
+                    <div class="social-icon instagram">
+                        <svg viewBox="0 0 24 24" width="48" height="48">
+                            <path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                    </div>
+                    <span>Instagram</span>
+                </a>
+
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="Twitter/X">
+                    <div class="social-icon twitter">
+                        <svg viewBox="0 0 24 24" width="48" height="48">
+                            <path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </div>
+                    <span>Twitter / X</span>
+                </a>
+
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="YouTube">
+                    <div class="social-icon youtube">
+                        <svg viewBox="0 0 24 24" width="48" height="48">
+                            <path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </div>
+                    <span>YouTube</span>
+                </a>
+
+                <a href="https://linkedin.com/school/" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="LinkedIn">
+                    <div class="social-icon linkedin">
+                        <svg viewBox="0 0 24 24" width="48" height="48">
+                            <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </div>
+                    <span>LinkedIn</span>
+                </a>
+
+                <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="TikTok">
+                    <div class="social-icon tiktok">
+                        <svg viewBox="0 0 24 24" width="48" height="48">
+                            <path fill="currentColor" d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </div>
+                    <span>TikTok</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>¿Listo para dar el siguiente paso?</h2>
+            <p>Inscripciones abiertas para el ciclo lectivo 2027.</p>
+            <a href="#contacto" class="btn-secondary">Inscríbete Hoy</a>
+        </div>
+    </section>
+
+    <!-- Contact Modal (hidden by default) -->
+    <div class="contact-modal" id="contact-modal" aria-hidden="true">
+        <div class="contact-card" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+            <button class="contact-close" id="contact-close" aria-label="Cerrar">✕</button>
+            <h3 id="contact-title">Contáctanos</h3>
+            <form id="contact-form">
+                <label for="contact-email">Correo</label>
+                <input type="email" id="contact-email" name="email" placeholder="tucorreo@ejemplo.com" required>
+
+                <label for="contact-subject">Asunto</label>
+                <input type="text" id="contact-subject" name="subject" placeholder="Asunto" required>
+
+                <label for="contact-message">Mensaje</label>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+
+                <div class="contact-actions">
+                    <button type="button" class="btn btn-outline" id="contact-cancel">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">Instituto Superior La Inmaculada</div>
+            <p>&copy; 2026 ISLI. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
