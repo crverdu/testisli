@@ -115,4 +115,29 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.add('active');
         }
     };
+
+    // Study plan year sections expand/collapse functionality
+    window.toggleYear = function(headerElement) {
+        const yearSection = headerElement.closest('.year-section');
+        const isActive = yearSection.classList.contains('active');
+        
+        // Get the parent study-plan container
+        const studyPlan = yearSection.closest('.study-plan');
+        
+        // Close all other year sections in the same study plan
+        if (studyPlan) {
+            studyPlan.querySelectorAll('.year-section.active').forEach(activeSection => {
+                if (activeSection !== yearSection) {
+                    activeSection.classList.remove('active');
+                }
+            });
+        }
+        
+        // Toggle current year section
+        if (isActive) {
+            yearSection.classList.remove('active');
+        } else {
+            yearSection.classList.add('active');
+        }
+    };
 });
