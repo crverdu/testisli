@@ -1,12 +1,73 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISLI | 85 años</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config con colores personalizados -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'azul-noche': '#0F172A',
+                        'azul-noche-oscuro': '#071226',
+                        'teal-acento': '#0EA5A4',
+                        'ice-acento': '#93C5FD',
+                        'blanco-fondo': '#F8FAFC',
+                        'texto-oscuro': '#1F2937',
+                        'texto-claro': '#E6F2FA',
+                    },
+                    fontFamily: {
+                        sans: ['Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Estilos personalizados mínimos (solo para animaciones específicas) -->
+    <style>
+        /* Animación para el modal de contacto */
+        .modal-enter {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .modal-enter-active {
+            opacity: 1;
+            pointer-events: auto;
+            transition: opacity 0.2s ease;
+        }
+        
+        /* Animación para acordeones */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .accordion-content.active {
+            max-height: 1000px;
+        }
+        
+        /* Animación para flechas de toggle */
+        .toggle-arrow {
+            transition: transform 0.3s ease;
+        }
+        .toggle-arrow.rotated {
+            transform: rotate(180deg);
+        }
+        
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-blanco-fondo text-texto-oscuro antialiased">
 
     <!-- Header Component -->
     <div id="header-component"></div>
@@ -16,6 +77,34 @@
 
     <!-- Footer Component -->
     <div id="footer-component"></div>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal-enter fixed inset-0 z-[2000] flex items-center justify-center bg-azul-noche/60 backdrop-blur-sm">
+        <div class="relative bg-gradient-to-b from-[#052032] to-[#0b2130] rounded-xl p-6 w-[90%] max-w-lg shadow-2xl">
+            <button id="modal-close" class="absolute top-4 right-4 text-texto-claro text-xl hover:text-ice-acento transition-colors">
+                &times;
+            </button>
+            <h3 class="text-xl font-bold text-ice-acento mb-4">Contáctanos</h3>
+            <form id="modal-contact-form" class="space-y-4">
+                <div>
+                    <label class="block text-sm text-[#cfe9fb] mb-1">Nombre</label>
+                    <input type="text" class="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-texto-claro focus:outline-none focus:ring-2 focus:ring-teal-acento" placeholder="Tu nombre" required>
+                </div>
+                <div>
+                    <label class="block text-sm text-[#cfe9fb] mb-1">Email</label>
+                    <input type="email" class="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-texto-claro focus:outline-none focus:ring-2 focus:ring-teal-acento" placeholder="tu@email.com" required>
+                </div>
+                <div>
+                    <label class="block text-sm text-[#cfe9fb] mb-1">Mensaje</label>
+                    <textarea rows="4" class="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-texto-claro focus:outline-none focus:ring-2 focus:ring-teal-acento" placeholder="Tu mensaje..." required></textarea>
+                </div>
+                <div class="flex gap-2 justify-end">
+                    <button type="button" id="modal-cancel" class="px-4 py-2 rounded-lg text-texto-claro hover:bg-white/10 transition-colors">Cancelar</button>
+                    <button type="submit" class="px-4 py-2 rounded-lg bg-teal-acento text-azul-noche font-bold hover:bg-teal-acento/90 transition-colors">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
     <script>
@@ -44,6 +133,48 @@
                     document.getElementById('footer-component').innerHTML = data;
                 })
                 .catch(error => console.error('Error loading footer:', error));
+                
+            // Contact Modal Logic
+            const contactModal = document.getElementById('contact-modal');
+            const contactLink = document.getElementById('contact-link');
+            const modalClose = document.getElementById('modal-close');
+            const modalCancel = document.getElementById('modal-cancel');
+            
+            function openModal() {
+                contactModal.classList.remove('modal-enter');
+                contactModal.classList.add('modal-enter-active');
+            }
+            
+            function closeModal() {
+                contactModal.classList.remove('modal-enter-active');
+                contactModal.classList.add('modal-enter');
+            }
+            
+            if (contactLink) {
+                contactLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal();
+                });
+            }
+            
+            if (modalClose) modalClose.addEventListener('click', closeModal);
+            if (modalCancel) modalCancel.addEventListener('click', closeModal);
+            if (contactModal) {
+                contactModal.addEventListener('click', (e) => {
+                    if (e.target === contactModal) closeModal();
+                });
+            }
+            
+            // Modal form submission
+            const modalForm = document.getElementById('modal-contact-form');
+            if (modalForm) {
+                modalForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Mensaje enviado exitosamente. Te responderemos a la brevedad.');
+                    modalForm.reset();
+                    closeModal();
+                });
+            }
         });
     </script>
 </body>

@@ -1,22 +1,134 @@
-<header id="main-header">
-    <div class="container nav-container">
-        <div class="logo">
-            <img src="assets/logo.svg" alt="Logo" width="38" height="38">
-            Instituto Superior La Inmaculada
+<header id="main-header" class="bg-azul-noche text-texto-claro py-4 fixed w-full top-0 z-[1000] transition-colors duration-300">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+            <img src="assets/logo.svg" alt="Logo" class="w-10 h-10">
+            <span class="text-2xl font-bold text-teal-acento">Instituto Superior La Inmaculada</span>
         </div>
-        <nav id="navbar">
-            <ul class="nav-links">
-                <li><a href="#" id="inicio-link">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#programas">Oferta Académica</a></li>
-                <li><a href="#" id="contact-link" class="btn-outline">Contacto</a></li>
-                <li><a href="#redes" class="btn-outline">Nuestras Redes</a></li>
+        
+        <!-- Navegación Desktop -->
+        <nav id="navbar" class="hidden md:block">
+            <ul class="flex items-center gap-8">
+                <li>
+                    <a href="#inicio" class="font-semibold hover:text-ice-acento hover:-translate-y-0.5 transition-all duration-200">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="#nosotros" class="font-semibold hover:text-ice-acento hover:-translate-y-0.5 transition-all duration-200">
+                        Nosotros
+                    </a>
+                </li>
+                <li>
+                    <a href="#programas" class="font-semibold hover:text-ice-acento hover:-translate-y-0.5 transition-all duration-200">
+                        Oferta Académica
+                    </a>
+                </li>
+                <li>
+                    <a href="#contacto-section" class="px-4 py-2 border-2 border-teal-acento text-teal-acento rounded-lg font-bold hover:bg-teal-acento/10 transition-all duration-200">
+                        Contacto
+                    </a>
+                </li>
+                <li>
+                    <a href="#redes" class="px-4 py-2 border-2 border-teal-acento text-teal-acento rounded-lg font-bold hover:bg-teal-acento/10 transition-all duration-200">
+                        Nuestras Redes
+                    </a>
+                </li>
             </ul>
         </nav>
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        
+        <!-- Menú Móvil Toggle -->
+        <div id="mobile-menu" class="md:hidden flex flex-col cursor-pointer gap-1">
+            <span class="block w-6 h-0.75 bg-texto-claro transition-all duration-300"></span>
+            <span class="block w-6 h-0.75 bg-texto-claro transition-all duration-300"></span>
+            <span class="block w-6 h-0.75 bg-texto-claro transition-all duration-300"></span>
         </div>
     </div>
+    
+    <!-- Menú Móvil (oculto por defecto) -->
+    <nav id="mobile-nav" class="md:hidden hidden absolute top-full left-0 w-full bg-azul-noche border-t border-white/10">
+        <ul class="flex flex-col py-4">
+            <li>
+                <a href="#" id="mobile-inicio-link" class="block px-6 py-3 font-semibold hover:bg-white/5 hover:text-ice-acento transition-colors">
+                    Inicio
+                </a>
+            </li>
+            <li>
+                <a href="#nosotros" class="block px-6 py-3 font-semibold hover:bg-white/5 hover:text-ice-acento transition-colors">
+                    Nosotros
+                </a>
+            </li>
+            <li>
+                <a href="#programas" class="block px-6 py-3 font-semibold hover:bg-white/5 hover:text-ice-acento transition-colors">
+                    Oferta Académica
+                </a>
+            </li>
+            <li>
+                <a href="#redes" class="block px-6 py-3 font-semibold hover:bg-white/5 hover:text-ice-acento transition-colors">
+                    Nuestras Redes
+                </a>
+            </li>
+            <li>
+                <a href="#" id="mobile-contact-link" class="block px-6 py-3 font-semibold text-teal-acento hover:bg-teal-acento/10 transition-colors">
+                    Contacto
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>
+
+<script>
+// Menú Móvil Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNav = document.getElementById('mobile-nav');
+    const bars = mobileMenu.querySelectorAll('.bar');
+    
+    mobileMenu.addEventListener('click', function() {
+        const isHidden = mobileNav.classList.contains('hidden');
+        
+        if (isHidden) {
+            mobileNav.classList.remove('hidden');
+            // Animación de las barras (hamburguesa a X)
+            bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            bars[1].style.opacity = '0';
+            bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+        } else {
+            mobileNav.classList.add('hidden');
+            // Reset de las barras
+            bars[0].style.transform = 'none';
+            bars[1].style.opacity = '1';
+            bars[2].style.transform = 'none';
+        }
+    });
+    
+    // Cerrar menú al hacer click en un enlace
+    const mobileLinks = mobileNav.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileNav.classList.add('hidden');
+            bars[0].style.transform = 'none';
+            bars[1].style.opacity = '1';
+            bars[2].style.transform = 'none';
+        });
+    });
+    
+    // Efecto scroll en header
+    const header = document.getElementById('main-header');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 50) {
+            header.classList.add('bg-azul-noche-oscuro');
+            header.classList.add('shadow-lg');
+        } else {
+            header.classList.remove('bg-azul-noche-oscuro');
+            header.classList.remove('shadow-lg');
+        }
+        
+        lastScroll = currentScroll;
+    });
+});
+</script>

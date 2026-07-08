@@ -1,409 +1,275 @@
-<section id="contacto" class="contact-section">
-  <div class="container">
-    <h2>Contáctanos</h2>
-    <p class="section-intro">
-      Completa el formulario para comunicarte con nosotros. Te responderemos a
-      la brevedad.
-    </p>
+<section id="contacto" class="py-20 bg-slate-100">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl md:text-5xl font-bold text-azul-noche mb-4 text-center">Contáctanos</h2>
+        <p class="text-lg text-texto-oscuro max-w-2xl mx-auto mb-12 text-center leading-relaxed">
+            Completa el formulario para comunicarte con nosotros. Te responderemos a la brevedad.
+        </p>
 
-    <div class="contact-grid">
-      <!-- Contact Form -->
-      <div class="contact-form-card">
-        <form id="contact-form" class="contact-form">
-          <div class="form-group">
-            <label for="nombre">Nombre y Apellido *</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              placeholder="Tu nombre completo"
-              required
-            />
-          </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto">
+            <!-- Formulario de Contacto -->
+            <div class="lg:col-span-7">
+                <div class="bg-white rounded-xl p-8 shadow-md border-t-4 border-azul-noche">
+                    <form id="contact-form" class="space-y-6">
+                        <!-- Nombre -->
+                        <div>
+                            <label for="nombre" class="block text-sm font-semibold text-azul-noche mb-2">
+                                Nombre y Apellido *
+                            </label>
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                placeholder="Tu nombre completo"
+                                required
+                                class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 text-texto-oscuro focus:outline-none focus:border-teal-acento focus:ring-2 focus:ring-teal-acento/20 transition-all duration-200"
+                            />
+                        </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Correo Electrónico *</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="tucorreo@ejemplo.com"
-                required
-              />
+                        <!-- Email y Teléfono -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-azul-noche mb-2">
+                                    Correo Electrónico *
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="tucorreo@ejemplo.com"
+                                    required
+                                    class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 text-texto-oscuro focus:outline-none focus:border-teal-acento focus:ring-2 focus:ring-teal-acento/20 transition-all duration-200"
+                                />
+                            </div>
+                            <div>
+                                <label for="telefono" class="block text-sm font-semibold text-azul-noche mb-2">
+                                    Teléfono
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="telefono"
+                                    name="telefono"
+                                    placeholder="+54 9 3758 XX XXXX"
+                                    class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 text-texto-oscuro focus:outline-none focus:border-teal-acento focus:ring-2 focus:ring-teal-acento/20 transition-all duration-200"
+                                />
+                            </div>
+                        </div>
+
+                        <!-- Asunto -->
+                        <div>
+                            <label for="asunto" class="block text-sm font-semibold text-azul-noche mb-2">
+                                Asunto *
+                            </label>
+                            <select
+                                id="asunto"
+                                name="asunto"
+                                required
+                                class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 text-texto-oscuro focus:outline-none focus:border-teal-acento focus:ring-2 focus:ring-teal-acento/20 transition-all duration-200 bg-white"
+                            >
+                                <option value="">Selecciona un asunto</option>
+                                <option value="informacion">Información general</option>
+                                <option value="inscripcion">Inscripciones</option>
+                                <option value="profesorado">Profesorado en Educación Especial</option>
+                                <option value="gastronomia">Tecnicatura en Gastronomía</option>
+                                <option value="alumnos">Consulta de alumnos</option>
+                                <option value="egresados">Egresados</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+
+                        <!-- Mensaje -->
+                        <div>
+                            <label for="mensaje" class="block text-sm font-semibold text-azul-noche mb-2">
+                                Mensaje *
+                            </label>
+                            <textarea
+                                id="mensaje"
+                                name="mensaje"
+                                rows="6"
+                                placeholder="Escribe tu mensaje aquí..."
+                                required
+                                class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 text-texto-oscuro focus:outline-none focus:border-teal-acento focus:ring-2 focus:ring-teal-acento/20 transition-all duration-200 resize-none"
+                            ></textarea>
+                        </div>
+
+                        <!-- Destino -->
+                        <div>
+                            <label for="destino" class="block text-sm font-semibold text-azul-noche mb-2">
+                                Enviar a:
+                            </label>
+                            <select
+                                id="destino"
+                                name="destino"
+                                class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 text-texto-oscuro focus:outline-none focus:border-teal-acento focus:ring-2 focus:ring-teal-acento/20 transition-all duration-200 bg-white"
+                            >
+                                <option value="institucional">
+                                    Email Institucional - institutolainmaculadapostoles@gmail.com
+                                </option>
+                                <option value="secretaria">Secretaría Académica</option>
+                                <option value="direccion">Dirección</option>
+                            </select>
+                        </div>
+
+                        <!-- Botón Enviar -->
+                        <button
+                            type="submit"
+                            class="w-full bg-teal-acento text-azul-noche font-bold px-6 py-4 rounded-lg hover:bg-teal-acento/90 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"
+                        >
+                            <span class="btn-text">Enviar Mensaje</span>
+                            <span class="btn-loading hidden">Enviando...</span>
+                        </button>
+                    </form>
+                </div>
             </div>
 
-            <div class="form-group">
-              <label for="telefono">Teléfono</label>
-              <input
-                type="tel"
-                id="telefono"
-                name="telefono"
-                placeholder="+54 9 3758 XX XXXX"
-              />
+            <!-- Sidebar con Información y Mapa -->
+            <div class="lg:col-span-5 space-y-6">
+                <!-- Información de Contacto -->
+                <div class="bg-white rounded-xl p-6 shadow-md border-t-4 border-teal-acento">
+                    <h3 class="text-xl font-bold text-azul-noche mb-6 pb-3 border-b-2 border-teal-acento">
+                        Información de Contacto
+                    </h3>
+
+                    <div class="space-y-5">
+                        <!-- Dirección -->
+                        <div class="flex gap-4">
+                            <div class="text-2xl flex-shrink-0">📍</div>
+                            <div>
+                                <h4 class="font-semibold text-azul-noche mb-1">Dirección</h4>
+                                <p class="text-texto-oscuro leading-relaxed">
+                                    Avenida Sarmiento 250<br />
+                                    Apóstoles, Misiones<br />
+                                    Argentina
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="flex gap-4">
+                            <div class="text-2xl flex-shrink-0">📞</div>
+                            <div>
+                                <h4 class="font-semibold text-azul-noche mb-1">Teléfono</h4>
+                                <p>
+                                    <a href="tel:+543758422231" class="text-teal-acento hover:text-azul-noche hover:underline transition-colors">
+                                        (03758) 42-2231
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex gap-4">
+                            <div class="text-2xl flex-shrink-0">📧</div>
+                            <div>
+                                <h4 class="font-semibold text-azul-noche mb-1">Email</h4>
+                                <p>
+                                    <a href="mailto:institutolainmaculadapostoles@gmail.com" class="text-teal-acento hover:text-azul-noche hover:underline transition-colors">
+                                        institutolainmaculadapostoles@gmail.com
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Horario -->
+                        <div class="flex gap-4">
+                            <div class="text-2xl flex-shrink-0">🕐</div>
+                            <div>
+                                <h4 class="font-semibold text-azul-noche mb-1">Horario de Atención</h4>
+                                <p class="text-texto-oscuro">
+                                    Lunes a Viernes<br />
+                                    8:00 - 17:00 hs
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa de Google -->
+                <div class="bg-white rounded-xl p-6 shadow-md border-t-4 border-azul-noche">
+                    <h4 class="text-lg font-bold text-azul-noche mb-4">Ubicación</h4>
+                    <div class="rounded-lg overflow-hidden border-2 border-slate-200 mb-4">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d612.882722072522!2d-55.75405704107372!3d-27.91504772701927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94563c1b06823333%3A0x571047a30f6371f7!2sInstituto%20Superior%20la%20Inmaculada!5e1!3m2!1ses-419!2sar!4v1782334219636!5m2!1ses-419!2sar"
+                            width="100%"
+                            height="280"
+                            style="border: 0"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            title="Ubicación del Instituto Superior La Inmaculada"
+                            class="w-full"
+                        ></iframe>
+                    </div>
+                    <a
+                        href="https://maps.google.com/?q=Ave Sarmiento 250, N3350 Apóstoles, Misiones"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 text-teal-acento font-semibold hover:text-azul-noche transition-colors"
+                    >
+                        Ver en Google Maps →
+                    </a>
+                </div>
             </div>
-          </div>
-
-          <div class="form-group">
-            <label for="asunto">Asunto *</label>
-            <select id="asunto" name="asunto" required>
-              <option value="">Selecciona un asunto</option>
-              <option value="informacion">Información general</option>
-              <option value="inscripcion">Inscripciones</option>
-              <option value="profesorado">
-                Profesorado en Educación Especial
-              </option>
-              <option value="gastronomia">Tecnicatura en Gastronomía</option>
-              <option value="alumnos">Consulta de alumnos</option>
-              <option value="egresados">Egresados</option>
-              <option value="otros">Otros</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="mensaje">Mensaje *</label>
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              rows="6"
-              placeholder="Escribe tu mensaje aquí..."
-              required
-            ></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="destino">Enviar a:</label>
-            <select id="destino" name="destino">
-              <option value="institucional">
-                Email Institucional - institutolainmaculadapostoles@gmail.com
-              </option>
-              <option value="secretaria">Secretaría Académica</option>
-              <option value="direccion">Dirección</option>
-            </select>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-block">
-            <span class="btn-text">Enviar Mensaje</span>
-            <span class="btn-loading" style="display: none">Enviando...</span>
-          </button>
-        </form>
-      </div>
-
-      <!-- Contact Info & Map -->
-      <div class="contact-sidebar">
-        <div class="contact-info-card">
-          <h3>Información de Contacto</h3>
-
-          <div class="info-item">
-            <div class="info-icon">📍</div>
-            <div class="info-content">
-              <h4>Dirección</h4>
-              <p>
-                Avenida Sarmiento 250<br />Apóstoles, Misiones<br />Argentina
-              </p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon">📞</div>
-            <div class="info-content">
-              <h4>Teléfono</h4>
-              <p><a href="tel:+543758422231">(03758) 42-2231</a></p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon">📧</div>
-            <div class="info-content">
-              <h4>Email</h4>
-              <p>
-                <a href="mailto:institutolainmaculadapostoles@gmail.com"
-                  >institutolainmaculadapostoles@gmail.com</a
-                >
-              </p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <div class="info-icon">🕐</div>
-            <div class="info-content">
-              <h4>Horario de Atención</h4>
-              <p>Lunes a Viernes<br />8:00 - 17:00 hs</p>
-            </div>
-          </div>
         </div>
-
-        <!-- Google Maps Embed -->
-        <div class="map-card">
-          <h4>Ubicación</h4>
-          <div class="map-wrapper">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d612.882722072522!2d-55.75405704107372!3d-27.91504772701927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94563c1b06823333%3A0x571047a30f6371f7!2sInstituto%20Superior%20la%20Inmaculada!5e1!3m2!1ses-419!2sar!4v1782334219636!5m2!1ses-419!2sar"
-              width="100%"
-              height="280"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="strict-origin-when-cross-origin"
-              title="Ubicación del Instituto Superior La Inmaculada"
-
-            ></iframe>
-          </div>
-          <a
-            href="https://maps.google.com/?q=Ave Sarmiento 250, N3350 Apóstoles, Misiones"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-outline btn-sm"
-          >
-            Ver en Google Maps →
-          </a>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
 
-<style>
-  /* Contact Section - matching site styles */
-  .contact-section {
-    padding: 5rem 0;
-    background-color: #f1f5f9;
-  }
-
-  .contact-section h2 {
-    color: var(--azul-noche);
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 2.5rem;
-    margin-top: 3rem;
-  }
-
-  @media (max-width: 992px) {
-    .contact-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* Form Card - matching program cards */
-  .contact-form-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow:
-      0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border-top: 4px solid var(--azul-noche);
-  }
-
-  .contact-form .form-group {
-    margin-bottom: 1.25rem;
-  }
-
-  .contact-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--azul-noche);
-    font-size: 0.95rem;
-  }
-
-  .contact-form input,
-  .contact-form select,
-  .contact-form textarea {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 2px solid #e2e8f0;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border-color 0.2s ease;
-    background: #fff;
-  }
-
-  .contact-form input:focus,
-  .contact-form select:focus,
-  .contact-form textarea:focus {
-    outline: none;
-    border-color: var(--acento-teal);
-  }
-
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  @media (max-width: 576px) {
-    .form-row {
-      grid-template-columns: 1fr;
-    }
-
-    .contact-form-card {
-      padding: 1.5rem;
-    }
-  }
-
-  .btn-block {
-    width: 100%;
-    margin-top: 0.5rem;
-  }
-
-  /* Sidebar */
-  .contact-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  /* Info Card */
-  .contact-info-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 1.75rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid var(--acento-teal);
-  }
-
-  .contact-info-card h3 {
-    color: var(--azul-noche);
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--acento-teal);
-  }
-
-  .info-item {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .info-item:last-child {
-    margin-bottom: 0;
-  }
-
-  .info-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-  }
-
-  .info-content h4 {
-    color: var(--azul-noche);
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .info-content p {
-    color: var(--texto-oscuro);
-    line-height: 1.5;
-    font-size: 0.95rem;
-  }
-
-  .info-content a {
-    color: var(--acento-teal);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .info-content a:hover {
-    color: var(--azul-noche);
-    text-decoration: underline;
-  }
-
-  /* Map Card */
-  .map-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 1.75rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    border-top: 4px solid var(--azul-noche);
-  }
-
-  .map-card h4 {
-    color: var(--azul-noche);
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-  }
-
-  .map-wrapper {
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 1rem;
-    border: 1px solid #e2e8f0;
-  }
-
-  .map-wrapper iframe {
-    display: block;
-  }
-
-  .btn-sm {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-  }
-</style>
-
 <script>
-  // Contact form submission handler
-  (function () {
+// Contact form submission handler
+(function () {
     const contactForm = document.getElementById("contact-form");
 
     if (contactForm) {
-      contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
+        contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-        const btn = this.querySelector('button[type="submit"]');
-        const btnText = btn.querySelector(".btn-text");
-        const btnLoading = btn.querySelector(".btn-loading");
+            const btn = this.querySelector('button[type="submit"]');
+            const btnText = btn.querySelector(".btn-text");
+            const btnLoading = btn.querySelector(".btn-loading");
 
-        // Show loading state
-        btnText.style.display = "none";
-        btnLoading.style.display = "inline";
-        btn.disabled = true;
+            // Show loading state
+            btnText.classList.add("hidden");
+            btnLoading.classList.remove("hidden");
+            btn.disabled = true;
 
-        // Get form data
-        const formData = {
-          nombre: document.getElementById("nombre").value,
-          email: document.getElementById("email").value,
-          telefono: document.getElementById("telefono").value,
-          asunto: document.getElementById("asunto").value,
-          mensaje: document.getElementById("mensaje").value,
-          destino: document.getElementById("destino").value,
-        };
+            // Get form data
+            const formData = {
+                nombre: document.getElementById("nombre").value,
+                email: document.getElementById("email").value,
+                telefono: document.getElementById("telefono").value,
+                asunto: document.getElementById("asunto").value,
+                mensaje: document.getElementById("mensaje").value,
+                destino: document.getElementById("destino").value,
+            };
 
-        // Validate required fields
-        if (
-          !formData.nombre ||
-          !formData.email ||
-          !formData.asunto ||
-          !formData.mensaje
-        ) {
-          alert("Por favor completa todos los campos obligatorios.");
-          btnText.style.display = "inline";
-          btnLoading.style.display = "none";
-          btn.disabled = false;
-          return;
-        }
+            // Validate required fields
+            if (
+                !formData.nombre ||
+                !formData.email ||
+                !formData.asunto ||
+                !formData.mensaje
+            ) {
+                alert("Por favor completa todos los campos obligatorios.");
+                btnText.classList.remove("hidden");
+                btnLoading.classList.add("hidden");
+                btn.disabled = false;
+                return;
+            }
 
-        // Simulate form submission
-        setTimeout(function () {
-          alert(
-            "Mensaje enviado exitosamente.\nGracias por contactarnos, " +
-              formData.nombre +
-              ". Te responderemos a la brevedad.",
-          );
-          contactForm.reset();
+            // Simulate form submission
+            setTimeout(function () {
+                alert(
+                    "Mensaje enviado exitosamente.\nGracias por contactarnos, " +
+                        formData.nombre +
+                        ". Te responderemos a la brevedad."
+                );
+                contactForm.reset();
 
-          // Reset button state
-          btnText.style.display = "inline";
-          btnLoading.style.display = "none";
-          btn.disabled = false;
-        }, 1500);
-      });
+                // Reset button state
+                btnText.classList.remove("hidden");
+                btnLoading.classList.add("hidden");
+                btn.disabled = false;
+            }, 1500);
+        });
     }
-  })();
+})();
 </script>
