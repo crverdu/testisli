@@ -115,27 +115,33 @@ window.initAppInteractions = function() {
     if (contactForm) {
         contactForm.addEventListener("submit", function (e) {
             e.preventDefault();
-            const btn = this.querySelector('button[type="submit"]');
-            const btnText = btn?.querySelector(".btn-text");
-            const btnLoading = btn?.querySelector(".btn-loading");
-
-            if (btnText && btnLoading) {
-                btnText.classList.add("hidden");
-                btnLoading.classList.remove("hidden");
-                btn.disabled = true;
-            }
-
+            
             const nombre = document.getElementById("nombre")?.value || '';
+            const emailRemitente = document.getElementById("email")?.value || '';
+            const telefono = document.getElementById("telefono")?.value || 'No especificado';
+            const asuntoSelect = document.getElementById("asunto");
+            const asuntoTexto = asuntoSelect ? asuntoSelect.options[asuntoSelect.selectedIndex].text : 'Consulta Institucional';
+            const mensaje = document.getElementById("mensaje")?.value || '';
+            
+            const emailInstitucional = "institutolainmaculadapostoles@gmail.com";
+            
+            // Construir el cuerpo del correo
+            const subject = encodeURIComponent(`[Consulta Web ISLI] ${asuntoTexto} - ${nombre}`);
+            const bodyText = `Hola, mi nombre es ${nombre}.\n` +
+                             `Contacto: ${emailRemitente} | Teléfono: ${telefono}\n` +
+                             `Asunto: ${asuntoTexto}\n\n` +
+                             `Mensaje:\n${mensaje}\n\n` +
+                             `--- Enviado desde el formulario web del ISLI ---`;
+            const body = encodeURIComponent(bodyText);
 
-            setTimeout(function () {
-                alert("Mensaje enviado exitosamente.\nGracias por contactarnos, " + nombre + ". Te responderemos a la brevedad.");
-                contactForm.reset();
-                if (btnText && btnLoading) {
-                    btnText.classList.remove("hidden");
-                    btnLoading.classList.add("hidden");
-                    btn.disabled = false;
-                }
-            }, 1000);
+            // Generar enlace mailto
+            const mailtoUrl = `mailto:${emailInstitucional}?subject=${subject}&body=${body}`;
+            
+            // Abrir aplicación de correo
+            window.location.href = mailtoUrl;
+
+            alert("Abriendo tu aplicación de correo para enviar la consulta a " + emailInstitucional);
+            contactForm.reset();
         });
     }
 
@@ -162,7 +168,22 @@ window.initAppInteractions = function() {
     if (modalForm) {
         modalForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Mensaje enviado exitosamente. Te responderemos a la brevedad.');
+            
+            const nombre = modalForm.querySelector('input[type="text"]')?.value || '';
+            const emailRemitente = modalForm.querySelector('input[type="email"]')?.value || '';
+            const mensaje = modalForm.querySelector('textarea')?.value || '';
+            const emailInstitucional = "institutolainmaculadapostoles@gmail.com";
+
+            const subject = encodeURIComponent(`[Consulta Rápida ISLI] - ${nombre}`);
+            const bodyText = `Hola, mi nombre es ${nombre}.\n` +
+                             `Correo de contacto: ${emailRemitente}\n\n` +
+                             `Mensaje:\n${mensaje}\n\n` +
+                             `--- Enviado desde el formulario modal del ISLI ---`;
+            const body = encodeURIComponent(bodyText);
+
+            window.location.href = `mailto:${emailInstitucional}?subject=${subject}&body=${body}`;
+
+            alert("Abriendo tu aplicación de correo para enviar la consulta a " + emailInstitucional);
             modalForm.reset();
             closeModal();
         });
