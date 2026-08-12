@@ -113,73 +113,36 @@
 
     <script src="script.js"></script>
     <script>
-        // Component Loader
+        // Component Loader con manejo de promesas sincrónico para inicializar eventos
         document.addEventListener('DOMContentLoaded', function() {
-            // Load Header
-            fetch('components/header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header-component').innerHTML = data;
+            Promise.all([
+                fetch('components/header.html').then(res => {
+                    if (!res.ok) throw new Error('Error al cargar header');
+                    return res.text();
+                }),
+                fetch('components/main-content.html').then(res => {
+                    if (!res.ok) throw new Error('Error al cargar main-content');
+                    return res.text();
+                }),
+                fetch('components/footer.html').then(res => {
+                    if (!res.ok) throw new Error('Error al cargar footer');
+                    return res.text();
                 })
-                .catch(error => console.error('Error loading header:', error));
+            ]).then(([headerData, mainData, footerData]) => {
+                document.getElementById('header-component').innerHTML = headerData;
+                document.getElementById('main-content-component').innerHTML = mainData;
+                document.getElementById('footer-component').innerHTML = footerData;
 
-            // Load Main Content
-            fetch('components/main-content.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('main-content-component').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading main content:', error));
-
-            // Load Footer
-            fetch('components/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-component').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading footer:', error));
-                
-            // Contact Modal Logic
-            const contactModal = document.getElementById('contact-modal');
-            const contactLink = document.getElementById('contact-link');
-            const modalClose = document.getElementById('modal-close');
-            const modalCancel = document.getElementById('modal-cancel');
-            
-            function openModal() {
-                contactModal.classList.remove('modal-enter');
-                contactModal.classList.add('modal-enter-active');
-            }
-            
-            function closeModal() {
-                contactModal.classList.remove('modal-enter-active');
-                contactModal.classList.add('modal-enter');
-            }
-            
-            if (contactLink) {
-                contactLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openModal();
-                });
-            }
-            
-            if (modalClose) modalClose.addEventListener('click', closeModal);
-            if (modalCancel) modalCancel.addEventListener('click', closeModal);
-            if (contactModal) {
-                contactModal.addEventListener('click', (e) => {
-                    if (e.target === contactModal) closeModal();
-                });
-            }
-            
-            // Modal form submission
-            const modalForm = document.getElementById('modal-contact-form');
-            if (modalForm) {
-                modalForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    alert('Mensaje enviado exitosamente. Te responderemos a la brevedad.');
-                    modalForm.reset();
-                    closeModal();
-                });
-            }
+                // Inicializar todas las interacciones de JavaScript en los elementos cargados
+                if (typeof window.initAppInteractions === 'function') {
+                    window.initAppInteractions();
+                }
+            }).catch(error => {
+                console.error('Error cargando componentes:', error);
+                if (window.location.protocol === 'file:') {
+                    console.warn('CORS restringido: Para ver los componentes localmente debes usar un servidor web local (ej. Live Server, npx serve o python -m http.server).');
+                }
+            });
         });
     </script>
 </body>

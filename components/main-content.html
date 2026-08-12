@@ -108,7 +108,7 @@
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <!-- Profesorado en Educación Especial -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-200/80">
+            <div class="program-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-200/80">
                 <div class="program-header bg-gradient-to-r from-azul-noche to-slate-800 text-texto-claro p-6 flex items-center cursor-pointer hover:from-slate-800 hover:to-azul-noche transition-all duration-300" onclick="toggleProgram(this)">
                     <div class="w-12 h-12 rounded-xl bg-teal-acento/20 text-teal-acento flex items-center justify-center mr-4 flex-shrink-0 border border-teal-acento/30">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
@@ -156,12 +156,12 @@
                                 <h5 class="text-teal-acento font-semibold mb-3">Plan de Estudios</h5>
                                 <div class="space-y-3">
                                     <!-- Primer Año -->
-                                    <div class="border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
+                                    <div class="year-section border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
                                         <div class="year-header bg-gradient-to-br from-slate-50 to-slate-100 p-4 flex justify-between items-center cursor-pointer hover:from-slate-100 hover:to-slate-50 transition-all duration-200" onclick="toggleYear(this)">
                                             <span class="font-semibold text-azul-noche">📚 Primer Año</span>
                                             <span class="year-toggle text-2xl font-bold text-teal-acento">+</span>
                                         </div>
-                                        <div class="year-content bg-white">
+                                        <div class="accordion-content year-content bg-white">
                                             <ul class="p-4 space-y-2">
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Filosofía</li>
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Taller de Oralidad, Lectura y Escritura</li>
@@ -179,12 +179,12 @@
                                     </div>
                                     
                                     <!-- Segundo Año -->
-                                    <div class="border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
+                                    <div class="year-section border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
                                         <div class="year-header bg-gradient-to-br from-slate-50 to-slate-100 p-4 flex justify-between items-center cursor-pointer hover:from-slate-100 hover:to-slate-50 transition-all duration-200" onclick="toggleYear(this)">
                                             <span class="font-semibold text-azul-noche">📚 Segundo Año</span>
                                             <span class="year-toggle text-2xl font-bold text-teal-acento">+</span>
                                         </div>
-                                        <div class="year-content bg-white">
+                                        <div class="accordion-content year-content bg-white">
                                             <ul class="p-4 space-y-2">
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Didáctica General</li>
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Tecnología de la Información y la Comunicación</li>
@@ -201,12 +201,12 @@
                                     </div>
                                     
                                     <!-- Tercer Año -->
-                                    <div class="border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
+                                    <div class="year-section border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
                                         <div class="year-header bg-gradient-to-br from-slate-50 to-slate-100 p-4 flex justify-between items-center cursor-pointer hover:from-slate-100 hover:to-slate-50 transition-all duration-200" onclick="toggleYear(this)">
                                             <span class="font-semibold text-azul-noche">📚 Tercer Año</span>
                                             <span class="year-toggle text-2xl font-bold text-teal-acento">+</span>
                                         </div>
-                                        <div class="year-content bg-white">
+                                        <div class="accordion-content year-content bg-white">
                                             <ul class="p-4 space-y-2">
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Sociología de la Educación</li>
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Psicopatología y Trastornos de Neurodesarrollo</li>
@@ -223,12 +223,12 @@
                                     </div>
                                     
                                     <!-- Cuarto Año -->
-                                    <div class="border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
+                                    <div class="year-section border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
                                         <div class="year-header bg-gradient-to-br from-slate-50 to-slate-100 p-4 flex justify-between items-center cursor-pointer hover:from-slate-100 hover:to-slate-50 transition-all duration-200" onclick="toggleYear(this)">
                                             <span class="font-semibold text-azul-noche">📚 Cuarto Año</span>
                                             <span class="year-toggle text-2xl font-bold text-teal-acento">+</span>
                                         </div>
-                                        <div class="year-content bg-white">
+                                        <div class="accordion-content year-content bg-white">
                                             <ul class="p-4 space-y-2">
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Formación Ética y Construcción de Ciudadanía</li>
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Taller de Legislación referido a la Discapacidad y la Labor Docente</li>
@@ -265,7 +265,7 @@
             </div>
             
             <!-- Tecnicatura en Gastronomía -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-200/80">
+            <div class="program-card bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-200/80">
                 <div class="program-header bg-gradient-to-r from-azul-noche to-slate-800 text-texto-claro p-6 flex items-center cursor-pointer hover:from-slate-800 hover:to-azul-noche transition-all duration-300" onclick="toggleProgram(this)">
                     <div class="w-12 h-12 rounded-xl bg-teal-acento/20 text-teal-acento flex items-center justify-center mr-4 flex-shrink-0 border border-teal-acento/30">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
@@ -312,12 +312,12 @@
                                 <h5 class="text-teal-acento font-semibold mb-3">Plan de Estudios</h5>
                                 <div class="space-y-3">
                                     <!-- Primer Año -->
-                                    <div class="border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
+                                    <div class="year-section border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
                                         <div class="year-header bg-gradient-to-br from-slate-50 to-slate-100 p-4 flex justify-between items-center cursor-pointer hover:from-slate-100 hover:to-slate-50 transition-all duration-200" onclick="toggleYear(this)">
                                             <span class="font-semibold text-azul-noche">📚 Primer Año</span>
                                             <span class="year-toggle text-2xl font-bold text-teal-acento">+</span>
                                         </div>
-                                        <div class="year-content bg-white">
+                                        <div class="accordion-content year-content bg-white">
                                             <ul class="p-4 space-y-2">
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Portugués</li>
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Informática</li>
@@ -334,12 +334,12 @@
                                     </div>
                                     
                                     <!-- Segundo Año -->
-                                    <div class="border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
+                                    <div class="year-section border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
                                         <div class="year-header bg-gradient-to-br from-slate-50 to-slate-100 p-4 flex justify-between items-center cursor-pointer hover:from-slate-100 hover:to-slate-50 transition-all duration-200" onclick="toggleYear(this)">
                                             <span class="font-semibold text-azul-noche">📚 Segundo Año</span>
                                             <span class="year-toggle text-2xl font-bold text-teal-acento">+</span>
                                         </div>
-                                        <div class="year-content bg-white">
+                                        <div class="accordion-content year-content bg-white">
                                             <ul class="p-4 space-y-2">
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Inglés</li>
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Cocina II</li>
@@ -358,12 +358,12 @@
                                     </div>
                                     
                                     <!-- Tercer Año -->
-                                    <div class="border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
+                                    <div class="year-section border border-slate-200 rounded-lg overflow-hidden hover:border-teal-acento hover:shadow-md transition-all duration-200">
                                         <div class="year-header bg-gradient-to-br from-slate-50 to-slate-100 p-4 flex justify-between items-center cursor-pointer hover:from-slate-100 hover:to-slate-50 transition-all duration-200" onclick="toggleYear(this)">
                                             <span class="font-semibold text-azul-noche">📚 Tercer Año</span>
                                             <span class="year-toggle text-2xl font-bold text-teal-acento">+</span>
                                         </div>
-                                        <div class="year-content bg-white">
+                                        <div class="accordion-content year-content bg-white">
                                             <ul class="p-4 space-y-2">
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Francés</li>
                                                 <li class="flex items-start"><span class="text-teal-acento mr-2">•</span> Legislación Bromatológica</li>
@@ -721,139 +721,3 @@
         </div>
     </div>
 </section>
-
-<script>
-// Toggle Programas (Acordeón)
-function toggleProgram(headerElement) {
-    const card = headerElement.closest('.program-card');
-    if (!card) return;
-    
-    const details = card.querySelector('.program-details');
-    const arrow = headerElement.querySelector('.toggle-arrow');
-    const isActive = card.classList.contains('active');
-    
-    // Cerrar todos los programas
-    document.querySelectorAll('.program-card').forEach(c => {
-        c.classList.remove('active');
-        const d = c.querySelector('.program-details');
-        const a = c.querySelector('.toggle-arrow');
-        if (d) {
-            d.classList.remove('active');
-            d.style.maxHeight = null;
-        }
-        if (a) a.classList.remove('rotated');
-    });
-    
-    // Abrir el actual si no estaba activo
-    if (!isActive) {
-        card.classList.add('active');
-        details.classList.add('active');
-        details.style.maxHeight = details.scrollHeight + 'px';
-        arrow.classList.add('rotated');
-    } else {
-        details.style.maxHeight = null;
-    }
-}
-
-// Toggle Años (Acordeón interno)
-function toggleYear(headerElement) {
-    const yearSection = headerElement.closest('.year-section');
-    if (!yearSection) return;
-    
-    const content = yearSection.querySelector('.year-content');
-    const toggle = headerElement.querySelector('.year-toggle');
-    const isActive = yearSection.classList.contains('active');
-    
-    // Cerrar otros year-sections en el mismo study-plan
-    const studyPlan = yearSection.closest('.space-y-3');
-    if (studyPlan) {
-        studyPlan.querySelectorAll('.year-section.active').forEach(section => {
-            if (section !== yearSection) {
-                section.classList.remove('active');
-                const c = section.querySelector('.year-content');
-                if (c) c.style.maxHeight = null;
-                const t = section.querySelector('.year-toggle');
-                if (t) t.textContent = '+';
-            }
-        });
-    }
-    
-    if (isActive) {
-        yearSection.classList.remove('active');
-        content.style.maxHeight = null;
-        toggle.textContent = '+';
-    } else {
-        yearSection.classList.add('active');
-        content.style.maxHeight = content.scrollHeight + 'px';
-        toggle.textContent = '−';
-    }
-}
-
-// CTA Contact Button - Scroll to contacto section
-document.getElementById('cta-contact-btn')?.addEventListener('click', function(e) {
-    e.preventDefault();
-    const contactoSection = document.getElementById('contacto-section');
-    if (contactoSection) {
-        contactoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-});
-
-// Contact form submission handler
-(function () {
-    const contactForm = document.getElementById("contact-form");
-
-    if (contactForm) {
-        contactForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const btn = this.querySelector('button[type="submit"]');
-            const btnText = btn.querySelector(".btn-text");
-            const btnLoading = btn.querySelector(".btn-loading");
-
-            // Show loading state
-            btnText.classList.add("hidden");
-            btnLoading.classList.remove("hidden");
-            btn.disabled = true;
-
-            // Get form data
-            const formData = {
-                nombre: document.getElementById("nombre").value,
-                email: document.getElementById("email").value,
-                telefono: document.getElementById("telefono").value,
-                asunto: document.getElementById("asunto").value,
-                mensaje: document.getElementById("mensaje").value,
-                destino: document.getElementById("destino").value,
-            };
-
-            // Validate required fields
-            if (
-                !formData.nombre ||
-                !formData.email ||
-                !formData.asunto ||
-                !formData.mensaje
-            ) {
-                alert("Por favor completa todos los campos obligatorios.");
-                btnText.classList.remove("hidden");
-                btnLoading.classList.add("hidden");
-                btn.disabled = false;
-                return;
-            }
-
-            // Simulate form submission
-            setTimeout(function () {
-                alert(
-                    "Mensaje enviado exitosamente.\nGracias por contactarnos, " +
-                        formData.nombre +
-                        ". Te responderemos a la brevedad."
-                );
-                contactForm.reset();
-
-                // Reset button state
-                btnText.classList.remove("hidden");
-                btnLoading.classList.add("hidden");
-                btn.disabled = false;
-            }, 1500);
-        });
-    }
-})();
-</script>
