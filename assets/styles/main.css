@@ -1,0 +1,42 @@
+/* Estilos personalizados adicionales y utilidades visuales ISLI */
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Montserrat', sans-serif;
+  }
+  .font-body {
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+/* Modals & Accordions */
+.modal-enter {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal-enter-active {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.2s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.accordion-content.active {
+  max-height: 1000px;
+}
+
+.toggle-arrow {
+  transition: transform 0.3s ease;
+}
+.toggle-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}

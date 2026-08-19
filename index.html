@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituto Superior La Inmaculada | ISLI - 85 años de Excelencia</title>
+    
+    <!-- Meta tags SEO -->
+    <title>Instituto Superior La Inmaculada | ISLI - Educación Superior en Apóstoles, Misiones</title>
+    <meta name="description" content="Instituto Superior La Inmaculada (ISLI) en Apóstoles, Misiones. 85 años de excelencia educativa. Oferta académica: Profesorado en Educación Especial y Tecnicatura Superior en Gastronomía con validez nacional.">
+    <meta name="keywords" content="ISLI, Instituto Superior La Inmaculada, Apóstoles Misiones, Profesorado Educación Especial, Tecnicatura Gastronomía, educación superior Misiones, carreras terciarias, inscripciones 2026">
+    <meta name="author" content="Instituto Superior La Inmaculada">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Instituto Superior La Inmaculada | ISLI - 85 Años de Historia">
+    <meta property="og:description" content="Formación Superior con Valor Humano y Excelencia Académica en Apóstoles, Misiones. Profesorado en Educación Especial y Tecnicatura en Gastronomía.">
+    <meta property="og:image" content="assets/icons/logo.svg">
 
-    <!-- Google Fonts -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+
+    <!-- Google Fonts: Montserrat (Títulos) y Roboto (Cuerpo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Tailwind Config con colores personalizados -->
+    <!-- Tailwind Config con paleta de color de acento y tipografías -->
     <script>
         tailwind.config = {
             theme: {
@@ -28,92 +43,36 @@
                         'texto-claro': '#E6F2FA',
                     },
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif'],
+                        sans: ['Roboto', 'Segoe UI', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
     
-    <!-- Estilos personalizados mínimos (solo para animaciones específicas) -->
-    <style>
-        /* Animación para el modal de contacto */
-        .modal-enter {
-            opacity: 0;
-            pointer-events: none;
-        }
-        .modal-enter-active {
-            opacity: 1;
-            pointer-events: auto;
-            transition: opacity 0.2s ease;
-        }
-        
-        /* Animación para acordeones */
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-        }
-        .accordion-content.active {
-            max-height: 1000px;
-        }
-        
-        /* Animación para flechas de toggle */
-        .toggle-arrow {
-            transition: transform 0.3s ease;
-        }
-        .toggle-arrow.rotated {
-            transform: rotate(180deg);
-        }
-        
-        /* Scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="assets/styles/main.css">
 </head>
-<body class="bg-blanco-fondo text-texto-oscuro antialiased">
+<body class="bg-blanco-fondo text-texto-oscuro antialiased font-body">
 
     <!-- Header Component -->
     <div id="header-component"></div>
 
     <!-- Main Content Component -->
-    <main id="main-content-component"></main>
+    <div id="main-content-component"></div>
 
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
-    <!-- Contact Modal -->
-    <div id="contact-modal" class="modal-enter fixed inset-0 z-[2000] flex items-center justify-center bg-azul-noche/60 backdrop-blur-sm">
-        <div class="relative bg-gradient-to-b from-[#052032] to-[#0b2130] rounded-xl p-6 w-[90%] max-w-lg shadow-2xl">
-            <button id="modal-close" class="absolute top-4 right-4 text-texto-claro text-xl hover:text-ice-acento transition-colors">
-                &times;
-            </button>
-            <h3 class="text-xl font-bold text-ice-acento mb-4">Contáctanos</h3>
-            <form id="modal-contact-form" class="space-y-4">
-                <div>
-                    <label class="block text-sm text-[#cfe9fb] mb-1">Nombre</label>
-                    <input type="text" class="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-texto-claro focus:outline-none focus:ring-2 focus:ring-teal-acento" placeholder="Tu nombre" required>
-                </div>
-                <div>
-                    <label class="block text-sm text-[#cfe9fb] mb-1">Email</label>
-                    <input type="email" class="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-texto-claro focus:outline-none focus:ring-2 focus:ring-teal-acento" placeholder="tu@email.com" required>
-                </div>
-                <div>
-                    <label class="block text-sm text-[#cfe9fb] mb-1">Mensaje</label>
-                    <textarea rows="4" class="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-texto-claro focus:outline-none focus:ring-2 focus:ring-teal-acento" placeholder="Tu mensaje..." required></textarea>
-                </div>
-                <div class="flex gap-2 justify-end">
-                    <button type="button" id="modal-cancel" class="px-4 py-2 rounded-lg text-texto-claro hover:bg-white/10 transition-colors">Cancelar</button>
-                    <button type="submit" class="px-4 py-2 rounded-lg bg-teal-acento text-azul-noche font-bold hover:bg-teal-acento/90 transition-colors">Enviar</button>
-                </div>
-            </form>
-        </div>
-    </div>
+    <!-- Modal Component -->
+    <div id="contact-modal-component"></div>
 
+    <!-- Script principal de la aplicación -->
     <script src="script.js"></script>
     <script>
-        // Component Loader con manejo de promesas sincrónico para inicializar eventos
+        // Carga modular de componentes HTML reutilizables
         document.addEventListener('DOMContentLoaded', function() {
             Promise.all([
                 fetch('components/header.html').then(res => {
@@ -127,13 +86,36 @@
                 fetch('components/footer.html').then(res => {
                     if (!res.ok) throw new Error('Error al cargar footer');
                     return res.text();
+                }),
+                fetch('components/modals/contact-modal.html').then(res => {
+                    if (!res.ok) throw new Error('Error al cargar modal');
+                    return res.text();
                 })
-            ]).then(([headerData, mainData, footerData]) => {
+            ]).then(([headerData, mainData, footerData, modalData]) => {
                 document.getElementById('header-component').innerHTML = headerData;
                 document.getElementById('main-content-component').innerHTML = mainData;
                 document.getElementById('footer-component').innerHTML = footerData;
+                document.getElementById('contact-modal-component').innerHTML = modalData;
 
-                // Inicializar todas las interacciones de JavaScript en los elementos cargados
+                // Cargar subsecciones modulares del main content
+                return Promise.all([
+                    fetch('components/sections/hero-nosotros.html').then(res => res.text()),
+                    fetch('components/sections/programas.html').then(res => res.text()),
+                    fetch('components/sections/redes-cta.html').then(res => res.text()),
+                    fetch('components/sections/contacto.html').then(res => res.text())
+                ]);
+            }).then(([heroNosotros, programas, redesCta, contacto]) => {
+                const sHero = document.getElementById('section-hero-nosotros');
+                const sProg = document.getElementById('section-programas');
+                const sRedes = document.getElementById('section-redes-cta');
+                const sCont = document.getElementById('section-contacto');
+
+                if (sHero) sHero.innerHTML = heroNosotros;
+                if (sProg) sProg.innerHTML = programas;
+                if (sRedes) sRedes.innerHTML = redesCta;
+                if (sCont) sCont.innerHTML = contacto;
+
+                // Inicializar eventos de interacción tras cargar todo el DOM dinámico
                 if (typeof window.initAppInteractions === 'function') {
                     window.initAppInteractions();
                 }

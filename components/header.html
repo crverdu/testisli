@@ -1,8 +1,8 @@
 <!-- Top Bar Institucional -->
-<div class="bg-azul-noche-oscuro/95 text-xs text-slate-300 py-2 border-b border-white/10 fixed w-full top-0 z-[1001] transition-all">
-    <div class="container mx-auto px-4 flex justify-between items-center">
+<div class="bg-azul-noche-oscuro/95 text-xs text-slate-300 py-2 border-b border-white/10 fixed w-full top-0 z-[1001] transition-all font-body">
+    <div class="container mx-auto px-4 sm:px-6 flex justify-between items-center">
         <div class="flex items-center gap-4 text-slate-300">
-            <span class="inline-flex items-center gap-1 text-teal-acento font-semibold bg-teal-acento/10 px-2 py-0.5 rounded-full border border-teal-acento/20">
+            <span class="inline-flex items-center gap-1.5 text-teal-acento font-semibold bg-teal-acento/10 px-2.5 py-0.5 rounded-full border border-teal-acento/20 text-[11px] sm:text-xs">
                 <span class="w-2 h-2 rounded-full bg-teal-acento animate-pulse"></span>
                 Inscripciones Abiertas 2026/2027
             </span>
@@ -12,34 +12,34 @@
         </div>
         <div class="flex items-center gap-4">
             <a href="tel:+543758422231" class="hover:text-ice-acento transition-colors flex items-center gap-1">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <svg class="w-3.5 h-3.5 text-teal-acento" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                 (03758) 42-2231
             </a>
             <a href="mailto:institutolainmaculadapostoles@gmail.com" class="hidden lg:flex hover:text-ice-acento transition-colors items-center gap-1">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <svg class="w-3.5 h-3.5 text-ice-acento" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 Email Institucional
             </a>
         </div>
     </div>
 </div>
 
-<!-- Header principal con Glassmorphism -->
+<!-- Header principal fijo con Glassmorphism -->
 <header id="main-header" class="bg-azul-noche/90 backdrop-blur-md text-texto-claro py-3.5 fixed w-full top-8 z-[1000] border-b border-white/10 transition-all duration-300">
-    <div class="container mx-auto px-4 flex justify-between items-center">
+    <div class="container mx-auto px-4 sm:px-6 flex justify-between items-center">
         <!-- Logo -->
         <a href="#inicio" class="flex items-center gap-3 group">
-            <img src="assets/logo.svg" alt="Logo ISLI" class="w-10 h-10 group-hover:scale-105 transition-transform duration-300">
+            <img src="assets/icons/logo.svg" alt="Instituto Superior La Inmaculada Logo - ISLI Apóstoles" class="w-10 h-10 group-hover:scale-105 transition-transform duration-300">
             <div class="flex flex-col">
-                <span class="text-lg md:text-xl font-bold text-white tracking-tight leading-tight group-hover:text-teal-acento transition-colors">
+                <span class="font-heading text-lg md:text-xl font-bold text-white tracking-tight leading-tight group-hover:text-teal-acento transition-colors">
                     Instituto Superior La Inmaculada
                 </span>
-                <span class="text-xs text-teal-acento font-semibold tracking-wider">ISLI • 85 AÑOS DE HISTORIA</span>
+                <span class="font-body text-[11px] text-teal-acento font-semibold tracking-wider uppercase">ISLI • 85 AÑOS DE HISTORIA</span>
             </div>
         </a>
         
         <!-- Navegación Desktop -->
         <nav id="navbar" class="hidden md:block">
-            <ul class="flex items-center gap-7 text-sm font-medium">
+            <ul class="flex items-center gap-6 font-body text-sm font-medium">
                 <li>
                     <a href="#inicio" class="hover:text-ice-acento transition-colors py-1">
                         Inicio
@@ -61,15 +61,20 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#contacto-section" class="px-4 py-2 bg-gradient-to-r from-teal-acento to-teal-600 text-azul-noche rounded-lg font-bold hover:shadow-lg hover:shadow-teal-acento/20 hover:-translate-y-0.5 transition-all duration-200">
-                        Contactar
+                    <a href="#contacto-section" class="hover:text-ice-acento transition-colors py-1">
+                        Contacto
+                    </a>
+                </li>
+                <li>
+                    <a href="#inscripciones" class="px-4 py-2 bg-gradient-to-r from-teal-acento to-teal-500 text-azul-noche-oscuro rounded-xl font-bold shadow-md shadow-teal-acento/10 hover:shadow-teal-acento/30 hover:-translate-y-0.5 transition-all duration-200">
+                        Inscribite
                     </a>
                 </li>
             </ul>
         </nav>
         
         <!-- Menú Móvil Toggle -->
-        <button id="mobile-menu" aria-label="Abrir menú" class="md:hidden flex flex-col justify-center items-center w-9 h-9 rounded-lg border border-white/10 p-2 gap-1.5 focus:outline-none">
+        <button id="mobile-menu" aria-label="Abrir menú de navegación" class="md:hidden flex flex-col justify-center items-center w-9 h-9 rounded-lg border border-white/10 p-2 gap-1.5 focus:outline-none focus:ring-2 focus:ring-teal-acento">
             <span class="mobile-bar block w-5 h-0.5 bg-texto-claro transition-all duration-300"></span>
             <span class="mobile-bar block w-5 h-0.5 bg-texto-claro transition-all duration-300"></span>
             <span class="mobile-bar block w-5 h-0.5 bg-texto-claro transition-all duration-300"></span>
@@ -77,7 +82,7 @@
     </div>
     
     <!-- Menú Móvil -->
-    <nav id="mobile-nav" class="md:hidden hidden absolute top-full left-0 w-full bg-azul-noche-oscuro/95 backdrop-blur-lg border-t border-white/10 shadow-2xl">
+    <nav id="mobile-nav" class="md:hidden hidden absolute top-full left-0 w-full bg-azul-noche-oscuro/95 backdrop-blur-lg border-t border-white/10 shadow-2xl font-body">
         <ul class="flex flex-col py-3 px-4 gap-1 text-sm font-medium">
             <li>
                 <a href="#inicio" class="block px-4 py-2.5 rounded-lg hover:bg-white/5 hover:text-ice-acento transition-colors">
@@ -99,9 +104,14 @@
                     Redes Sociales
                 </a>
             </li>
+            <li>
+                <a href="#contacto-section" class="block px-4 py-2.5 rounded-lg hover:bg-white/5 hover:text-ice-acento transition-colors">
+                    Contacto
+                </a>
+            </li>
             <li class="pt-2">
-                <a href="#contacto-section" class="block text-center px-4 py-3 bg-teal-acento text-azul-noche rounded-lg font-bold hover:bg-teal-acento/90 transition-colors">
-                    Contactar Ahora
+                <a href="#inscripciones" class="block text-center px-4 py-3 rounded-xl bg-teal-acento text-azul-noche-oscuro font-bold hover:bg-teal-acento/90 transition-colors">
+                    Inscribite 2026
                 </a>
             </li>
         </ul>
