@@ -1,12 +1,220 @@
-/* Estilos personalizados adicionales y utilidades visuales ISLI */
+/* Estilos personalizados y Sistema de Diseño ISLI */
 
-@layer utilities {
-  .font-heading {
-    font-family: 'Montserrat', sans-serif;
-  }
-  .font-body {
-    font-family: 'Roboto', sans-serif;
-  }
+:root {
+  /* Paleta Derivada: Colores Base & Tokens CSS */
+  --color-primary: #0F172A;        /* Azul Noche Profundo */
+  --color-primary-dark: #071226;   /* Azul Noche Oscuro */
+  --color-secondary: #1E293B;      /* Azul Slate */
+  --color-accent: #0EA5A4;         /* Teal acento vibrante */
+  --color-accent-hover: #0B8584;   /* Teal hover */
+  --color-accent-light: #38BDF8;   /* Sky Blue */
+
+  /* Neutrales */
+  --neutral-100: #F8FAFC;
+  --neutral-200: #E2E8F0;
+  --neutral-300: #CBD5E1;
+  --neutral-400: #94A3B8;
+  --neutral-500: #64748B;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1E293B;
+  --neutral-900: #0F172A;
+
+  /* Espaciado Grid (Multiples de 8px) */
+  --space-1: 0.5rem;   /* 8px */
+  --space-2: 1rem;     /* 16px */
+  --space-3: 1.5rem;   /* 24px */
+  --space-4: 2rem;     /* 32px */
+  --space-6: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+
+  /* Radius */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-md: 0.75rem;  /* 12px */
+  --radius-lg: 1rem;     /* 16px */
+  --radius-xl: 1.5rem;   /* 24px */
+}
+
+/* Escala Tipográfica Responsiva (H1-H6, p, small) en rem */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--neutral-900);
+  background-color: var(--neutral-100);
+  line-height: 1.6;
+}
+
+h1, .h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.25rem, 4vw, 3.25rem); /* 36px - 52px */
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h2, .h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.35rem); /* 28px - 38px */
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+h3, .h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem); /* 21px - 28px */
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h4, .h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem); /* 18px - 21px */
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+h5, .h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.125rem; /* 18px */
+  font-weight: 600;
+}
+
+h6, .h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem; /* 16px */
+  font-weight: 600;
+}
+
+p, .p {
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;
+}
+
+small, .small {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5;
+}
+
+.microcopy {
+  font-size: 0.75rem; /* 12px */
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Sistema de Variantes de Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border-radius: var(--radius-md);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid transparent;
+  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-accent-light);
+  outline-offset: 3px;
+}
+
+/* Botón Primario */
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
+  box-shadow: 0 4px 14px 0 rgba(14, 165, 164, 0.25);
+}
+.btn-primary:hover {
+  background-color: #12C2C1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(14, 165, 164, 0.4);
+}
+.btn-primary:active {
+  transform: translateY(0);
+  background-color: var(--color-accent-hover);
+}
+
+/* Botón Secundario */
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+  border-color: var(--neutral-700);
+}
+.btn-secondary:hover {
+  background-color: var(--neutral-700);
+  border-color: var(--neutral-600);
+  transform: translateY(-2px);
+}
+.btn-secondary:active {
+  transform: translateY(0);
+  background-color: var(--color-primary);
+}
+
+/* Botón Ghost */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--neutral-100);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #FFFFFF;
+}
+.btn-ghost:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos de Tarjetas Modulares */
+.card-base {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card-compact {
+  padding: var(--space-2);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.card-regular {
+  padding: var(--space-3);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
+}
+.card-regular:hover {
+  box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.12);
+  transform: translateY(-3px);
+}
+
+.card-destacado {
+  padding: var(--space-4);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 10px 30px -5px rgba(14, 165, 164, 0.15);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F0FDF4 100%);
+}
+
+.card-dark {
+  background-color: var(--color-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--neutral-100);
 }
 
 /* Modals & Accordions */
@@ -23,7 +231,7 @@
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
 }
 .accordion-content.active {
   max-height: 1000px;
@@ -36,7 +244,3 @@
   transform: rotate(180deg);
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
-}

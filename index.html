@@ -100,17 +100,20 @@
                 // Cargar subsecciones modulares del main content
                 return Promise.all([
                     fetch('components/sections/hero-nosotros.html').then(res => res.text()),
+                    fetch('components/sections/cards-system.html').then(res => res.text()),
                     fetch('components/sections/programas.html').then(res => res.text()),
                     fetch('components/sections/redes-cta.html').then(res => res.text()),
                     fetch('components/sections/contacto.html').then(res => res.text())
                 ]);
-            }).then(([heroNosotros, programas, redesCta, contacto]) => {
+            }).then(([heroNosotros, cardsSystem, programas, redesCta, contacto]) => {
                 const sHero = document.getElementById('section-hero-nosotros');
+                const sCards = document.getElementById('section-tarjetas-modulares');
                 const sProg = document.getElementById('section-programas');
                 const sRedes = document.getElementById('section-redes-cta');
                 const sCont = document.getElementById('section-contacto');
 
                 if (sHero) sHero.innerHTML = heroNosotros;
+                if (sCards) sCards.innerHTML = cardsSystem;
                 if (sProg) sProg.innerHTML = programas;
                 if (sRedes) sRedes.innerHTML = redesCta;
                 if (sCont) sCont.innerHTML = contacto;

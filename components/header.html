@@ -24,7 +24,7 @@
 </div>
 
 <!-- Header principal fijo con Glassmorphism -->
-<header id="main-header" class="bg-azul-noche/90 backdrop-blur-md text-texto-claro py-3.5 fixed w-full top-8 z-[1000] border-b border-white/10 transition-all duration-300">
+<header id="main-header" class="bg-azul-noche/90 backdrop-blur-md text-texto-claro py-3 fixed w-full top-8 z-[1000] border-b border-white/10 transition-all duration-300">
     <div class="container mx-auto px-4 sm:px-6 flex justify-between items-center">
         <!-- Logo -->
         <a href="#inicio" class="flex items-center gap-3 group">
@@ -37,41 +37,51 @@
             </div>
         </a>
         
-        <!-- Navegación Desktop -->
-        <nav id="navbar" class="hidden md:block">
-            <ul class="flex items-center gap-6 font-body text-sm font-medium">
-                <li>
-                    <a href="#inicio" class="hover:text-ice-acento transition-colors py-1">
-                        Inicio
-                    </a>
-                </li>
-                <li>
-                    <a href="#nosotros" class="hover:text-ice-acento transition-colors py-1">
-                        Nosotros
-                    </a>
-                </li>
-                <li>
-                    <a href="#programas" class="hover:text-ice-acento transition-colors py-1">
-                        Oferta Académica
-                    </a>
-                </li>
-                <li>
-                    <a href="#redes" class="hover:text-ice-acento transition-colors py-1">
-                        Redes
-                    </a>
-                </li>
-                <li>
-                    <a href="#contacto-section" class="hover:text-ice-acento transition-colors py-1">
-                        Contacto
-                    </a>
-                </li>
-                <li>
-                    <a href="#inscripciones" class="px-4 py-2 bg-gradient-to-r from-teal-acento to-teal-500 text-azul-noche-oscuro rounded-xl font-bold shadow-md shadow-teal-acento/10 hover:shadow-teal-acento/30 hover:-translate-y-0.5 transition-all duration-200">
-                        Inscribite
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <!-- Navegación Desktop con CTA Fijo y Microcopy de 3 palabras -->
+        <div class="hidden md:flex items-center gap-6">
+            <nav id="navbar">
+                <ul class="flex items-center gap-5 font-body text-sm font-medium">
+                    <li>
+                        <a href="#inicio" class="hover:text-ice-acento transition-colors py-1">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#nosotros" class="hover:text-ice-acento transition-colors py-1">
+                            Nosotros
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tarjetas-modulares" class="hover:text-ice-acento transition-colors py-1">
+                            Información
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#programas" class="hover:text-ice-acento transition-colors py-1">
+                            Carreras
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contacto-section" class="hover:text-ice-acento transition-colors py-1">
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- CTA Fijo Principal + Microcopy de 3 palabras -->
+            <div class="flex flex-col items-end justify-center">
+                <a href="#inscripciones-card" class="btn btn-primary shadow-lg shadow-teal-500/20 py-2 px-4 text-sm font-bold flex items-center gap-2">
+                    <svg class="w-4 h-4 text-azul-noche-oscuro" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                    </svg>
+                    <span>Inscribirse ahora</span>
+                </a>
+                <span class="microcopy text-[10px] text-teal-acento font-bold mt-1 tracking-wide">
+                    Cupos limitados 2026
+                </span>
+            </div>
+        </div>
         
         <!-- Menú Móvil Toggle -->
         <button id="mobile-menu" aria-label="Abrir menú de navegación" class="md:hidden flex flex-col justify-center items-center w-9 h-9 rounded-lg border border-white/10 p-2 gap-1.5 focus:outline-none focus:ring-2 focus:ring-teal-acento">
@@ -83,36 +93,39 @@
     
     <!-- Menú Móvil -->
     <nav id="mobile-nav" class="md:hidden hidden absolute top-full left-0 w-full bg-azul-noche-oscuro/95 backdrop-blur-lg border-t border-white/10 shadow-2xl font-body">
-        <ul class="flex flex-col py-3 px-4 gap-1 text-sm font-medium">
+        <ul class="flex flex-col py-4 px-4 gap-2 text-sm font-medium">
             <li>
-                <a href="#inicio" class="block px-4 py-2.5 rounded-lg hover:bg-white/5 hover:text-ice-acento transition-colors">
+                <a href="#inicio" class="block px-4 py-2 rounded-lg hover:bg-white/5 hover:text-ice-acento transition-colors">
                     Inicio
                 </a>
             </li>
             <li>
-                <a href="#nosotros" class="block px-4 py-2.5 rounded-lg hover:bg-white/5 hover:text-ice-acento transition-colors">
+                <a href="#nosotros" class="block px-4 py-2 rounded-lg hover:bg-white/5 hover:text-ice-acento transition-colors">
                     Nosotros
                 </a>
             </li>
             <li>
-                <a href="#programas" class="block px-4 py-2.5 rounded-lg hover:bg-white/5 hover:text-ice-acento transition-colors">
-                    Oferta Académica
+                <a href="#tarjetas-modulares" class="block px-4 py-2 rounded-lg hover:bg-white/5 hover:text-ice-acento transition-colors">
+                    Información Modular
                 </a>
             </li>
             <li>
-                <a href="#redes" class="block px-4 py-2.5 rounded-lg hover:bg-white/5 hover:text-ice-acento transition-colors">
-                    Redes Sociales
+                <a href="#programas" class="block px-4 py-2 rounded-lg hover:bg-white/5 hover:text-ice-acento transition-colors">
+                    Carreras
                 </a>
             </li>
             <li>
-                <a href="#contacto-section" class="block px-4 py-2.5 rounded-lg hover:bg-white/5 hover:text-ice-acento transition-colors">
+                <a href="#contacto-section" class="block px-4 py-2 rounded-lg hover:bg-white/5 hover:text-ice-acento transition-colors">
                     Contacto
                 </a>
             </li>
-            <li class="pt-2">
-                <a href="#inscripciones" class="block text-center px-4 py-3 rounded-xl bg-teal-acento text-azul-noche-oscuro font-bold hover:bg-teal-acento/90 transition-colors">
-                    Inscribite 2026
+            <li class="pt-2 border-t border-white/10 flex flex-col items-center text-center">
+                <a href="#inscripciones-card" class="w-full btn btn-primary py-2.5 text-center font-bold">
+                    Inscribirse ahora
                 </a>
+                <span class="microcopy text-[10px] text-teal-acento font-bold mt-1">
+                    Cupos limitados 2026
+                </span>
             </li>
         </ul>
     </nav>
