@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Meta tags SEO -->
     <title>Instituto Superior La Inmaculada | ISLI - Educación Superior en Apóstoles, Misiones</title>
-    <meta name="description" content="Instituto Superior La Inmaculada (ISLI) en Apóstoles, Misiones. 85 años de excelencia educativa. Oferta académica: Profesorado en Educación Especial y Tecnicatura Superior en Gastronomía con validez nacional.">
-    <meta name="keywords" content="ISLI, Instituto Superior La Inmaculada, Apóstoles Misiones, Profesorado Educación Especial, Tecnicatura Gastronomía, educación superior Misiones, carreras terciarias, inscripciones 2026">
+    <meta name="description"
+        content="Instituto Superior La Inmaculada (ISLI) en Apóstoles, Misiones. 85 años de excelencia educativa. Oferta académica: Profesorado en Educación Especial y Tecnicatura Superior en Gastronomía con validez nacional.">
+    <meta name="keywords"
+        content="ISLI, Instituto Superior La Inmaculada, Apóstoles Misiones, Profesorado Educación Especial, Tecnicatura Gastronomía, educación superior Misiones, carreras terciarias, inscripciones 2027">
     <meta name="author" content="Instituto Superior La Inmaculada">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Instituto Superior La Inmaculada | ISLI - 85 Años de Historia">
-    <meta property="og:description" content="Formación Superior con Valor Humano y Excelencia Académica en Apóstoles, Misiones. Profesorado en Educación Especial y Tecnicatura en Gastronomía.">
+    <meta property="og:description"
+        content="Formación Superior con Valor Humano y Excelencia Académica en Apóstoles, Misiones. Profesorado en Educación Especial y Tecnicatura en Gastronomía.">
     <meta property="og:image" content="assets/icons/logo.svg">
 
     <!-- Favicon -->
@@ -23,11 +27,13 @@
     <!-- Google Fonts: Montserrat (Títulos) y Roboto (Cuerpo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Tailwind Config con paleta de color de acento y tipografías -->
     <script>
         tailwind.config = {
@@ -51,10 +57,11 @@
             }
         }
     </script>
-    
+
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="assets/styles/main.css">
 </head>
+
 <body class="bg-blanco-fondo text-texto-oscuro antialiased font-body">
 
     <!-- Header Component -->
@@ -73,7 +80,7 @@
     <script src="script.js"></script>
     <script>
         // Carga modular de componentes HTML reutilizables
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             Promise.all([
                 fetch('components/header.html').then(res => {
                     if (!res.ok) throw new Error('Error al cargar header');
@@ -131,4 +138,5 @@
         });
     </script>
 </body>
+
 </html>
